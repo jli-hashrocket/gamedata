@@ -40,6 +40,7 @@ games.each do |game|
     scores[game[:home_team]][1] += 1 
   end
 end
+scores = scores.sort_by{|key, val| -val[0]}
 scores.each do |key, val|
   puts "#{key} #{val[0]} wins, #{val[1]} losses" 
 end
